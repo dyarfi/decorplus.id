@@ -1,0 +1,116 @@
+html,
+body {
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+// body {
+//   display: -ms-flexbox;
+//   display: flex;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   padding-top: 40px;
+//   padding-bottom: 40px;
+  /* background-color: #f5f5f5; */
+// }
+/* h1,h2,h3,h4,h5,h6 { font-family: 'Nothing You Could Do', cursive; } */
+.display-1,
+.display-2,
+.display-3,
+.display-4, {
+    font-family: 'Nothing You Could Do', cursive;
+}
+.navbar-logo {
+    margin-left:auto;
+    margin-right:auto;
+    font-family: 'Nothing You Could Do', cursive;
+    h1 {
+        color:rgb(39, 39, 39);
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+.button-burger {
+    position: fixed;
+    right: 14px;
+    top: 26px;
+    .btn {
+        // border:0;
+        outline: none !important;
+        // box-shadow: 0;
+        border-radius: 0;
+    }
+}
+.button-close {
+    // margin-right: auto;
+    // margin-left: 0;
+    right: 14px;
+    top: 26px;
+    position: absolute;
+}
+.menus-nav {
+    position: absolute;
+    top:40%;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    
+}
+.fixed-menu {
+    position: fixed;
+    height: 100%;
+    width: 25%;
+    max-width: 25%;
+    bottom:0;
+    left: inherit;
+    right:0;
+    background-color:#f2f2f2; 
+    padding: 2rem;
+    transition: all .5s ease-in-out;
+    transform: translateY(0%);
+    &:before {
+        content:" ";
+        position: absolute;
+        // z-index: -1;
+        left:-150vh;
+        right:0;
+        top:0;
+        bottom:0;        
+        width: 150vh;
+        height:100%;
+        background: rgba(0,0,0,.5);
+    }
+    &.invisible {
+        transform: translateY(-100%);
+    }
+}
+// #wrapper, .form-signin {
+    // width: 100%;
+    // max-width: 330px;
+    // padding: 15px;
+    // margin: auto;
+//   }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
