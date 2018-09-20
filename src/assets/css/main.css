@@ -69,6 +69,7 @@ body {
       -ms-transform: translateY(0%);
        -o-transform: translateY(0%);
           transform: translateY(0%);
+  z-index: 3005;
 }
 
 .fixed-menu:before {
@@ -80,6 +81,7 @@ body {
   bottom: 0;
   width: 150vh;
   height: 100%;
+  overflow: hidden;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -117,5 +119,85 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+/*! --- 1.1 Carousels --- */
+.slick-slide {
+  outline: 0;
+}
+
+.slick-slider .carousel-control-prev,
+.slick-slider .carousel-control-next {
+  z-index: 1;
+  opacity: .5;
+  width: 15%;
+  overflow-x: hidden;
+  -webkit-transition: opacity 0.2s linear, -webkit-transform 0.32s ease-in-out;
+  transition: opacity 0.2s linear, -webkit-transform 0.32s ease-in-out;
+  -o-transition: opacity 0.2s linear, -o-transform 0.32s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.32s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.32s ease-in-out, -webkit-transform 0.32s ease-in-out, -o-transform 0.32s ease-in-out;
+}
+
+.slick-slider .carousel-control-prev i,
+.slick-slider .carousel-control-next i {
+  -webkit-transition: -webkit-transform 0.32s ease-out;
+  transition: -webkit-transform 0.32s ease-out;
+  -o-transition: -o-transform 0.32s ease-out;
+  transition: transform 0.32s ease-out;
+  transition: transform 0.32s ease-out, -webkit-transform 0.32s ease-out, -o-transform 0.32s ease-out;
+}
+
+.slick-slider .carousel-control-prev:hover,
+.slick-slider .carousel-control-next:hover {
+  opacity: 1;
+  -webkit-transform: scale(1) !important;
+      -ms-transform: scale(1) !important;
+       -o-transform: scale(1) !important;
+          transform: scale(1) !important;
+}
+
+.slick-slider .carousel-control-prev i {
+  -webkit-transform: translateX(-5rem);
+      -ms-transform: translateX(-5rem);
+       -o-transform: translateX(-5rem);
+          transform: translateX(-5rem);
+}
+
+.slick-slider .carousel-control-next i {
+  -webkit-transform: translateX(5rem);
+      -ms-transform: translateX(5rem);
+       -o-transform: translateX(5rem);
+          transform: translateX(5rem);
+}
+
+.slick-slider:hover .carousel-control-prev,
+.slick-slider:hover .carousel-control-next {
+  -webkit-transform: scale(0.75);
+      -ms-transform: scale(0.75);
+       -o-transform: scale(0.75);
+          transform: scale(0.75);
+}
+
+.slick-slider:hover .carousel-control-prev i,
+.slick-slider:hover .carousel-control-next i {
+  -webkit-transform: translateX(0rem);
+      -ms-transform: translateX(0rem);
+       -o-transform: translateX(0rem);
+          transform: translateX(0rem);
+}
+
+.gallery-list {
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-list__content {
+  height: 275px;
+  background-color: #ccc;
+  margin-bottom: .25rem;
+  margin-top: .25rem;
+  margin-right: .25rem;
+  margin-left: .25rem;
 }
 /*# sourceMappingURL=main.css.map */
