@@ -3,6 +3,8 @@
     "liveServer.settings.fullReload": true,   
     "liveServer.settings.root": "/src",    
     "liveSassCompile.settings.includeItems": [
+        "scss/vendors/_base.scss",
+        "scss/vendors/_variables.scss",
         "scss/main.scss"
     ],
     "liveSassCompile.settings.autoprefix": [

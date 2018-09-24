@@ -1,0 +1,22 @@
+// ****** Our base variables ******* //
+
+$font-size-base: 0.95rem !default;
+$font-family-base : 'Raleway', sans-serif;
+$font-family-head-base : 'Nothing You Could Do', cursive;
+$font-family-lead-base : 'Lato', sans-serif;
+
+// Font Weight Base
+$font-weight-light:           100 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+@import "_variables"; // --- Vendors Variables
+@import "bootstrap/bootstrap"; // --- Vendors Bootstrap 4
+@import "entypo/scss/entypo-plus"; // --- Vendors Entypo Plus
+@import "open-iconic/scss/open-iconic-bootstrap"; // --- Vendors Open Iconic
+// @import "fontawesome/scss/fa-brands"; // --- Vendors Font Awesome 5 Brands
+// @import "fontawesome/scss/fa-regular"; // --- Vendors Font Awesome 5 Regular
+// @import "fontawesome/scss/fa-solid"; // --- Vendors Font Awesome 5 Solid 
+// @import "fontawesome/scss/fontawesome"; // --- Vendors Font Awesome 5
+
+
