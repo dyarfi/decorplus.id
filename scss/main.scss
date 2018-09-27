@@ -257,11 +257,13 @@ a:focus, button:focus, .btn:focus {
     padding-bottom:.65rem;
     // font-family: $font-family-head-base;
     color:rgb(39, 39, 39);
-    // transition: .75ms ease;
-    img {
-        transition: .5s ease-in-out;
-        @extend %ilist-i;
-    }
+    // transition: .75s ease;
+    transition: .45s linear;
+    @extend %ilist-i;
+    // img {
+    //     // transition: .5s ease-in-out;
+    //     transition: .45s linear;
+    // }
     &:hover {
         text-decoration: none;
         color:$gray-600;
@@ -270,27 +272,48 @@ a:focus, button:focus, .btn:focus {
         margin-left:1.5rem;
     }
 }
+.navbar {
+    .navbar-logo {
+        img {
+            transition: .25s linear;
+        }
+    }
+}
 .navbar-transparent {
     // background: linear-gradient(to bottom, rgba(darken($gray-700,20), .45), rgba(darken($gray-700,10), 0)) !important;
-    background-color: $white;
+    // background-color: $white;
+    // transition: .5s ease;
+    // transform: translateY(-30px);
+    // transition-delay: 1s;
 	// &.static-top {
 	// 	background: rgba(0, 0, 0, 1) !important;
 	// 	z-index: 1;
-	// }
+    // }
 	&.fixed-top {
-        // transition: .5 ease;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        box-shadow: 0 0 0 0;
+        padding-top: 1.15rem;
+        padding-bottom: 1.15rem;
+        box-shadow: 0;
+        .navbar-logo > img {
+            // transform: scale(1)
+            width: 160px;
+        }
 	}
 }
-.navbar-white {
+.fixed-top.shadow-md {
+    .navbar-logo > img {
+        // transform: scale(0.85);
+        width:144px;
+    }
+}
+.navbar-white  {
     transition: .5s ease;
+    // transition-delay: .25s;
     background-color: #ffffff;
 }
 .button-burger, .button-close {
     position: absolute;
     transition: .5s ease;
+    right: 14px;    
     .btn {
         color:#dc3545;
         transition: 1.25s ease;
@@ -309,7 +332,6 @@ a:focus, button:focus, .btn:focus {
     }
 }
 .button-burger {
-    right: 14px;
     top: 26px;
     .btn {
         &.toggled {
@@ -320,8 +342,7 @@ a:focus, button:focus, .btn:focus {
     }
 }
 .button-close {
-    right: 14px;
-    top: 26px;
+    top: 20px;
     .btn {
         &.toggled {
             transform: rotate(-180deg);
@@ -407,7 +428,7 @@ a:focus, button:focus, .btn:focus {
     bottom:0;
     right:0;
     background-color:#f2f2f2; 
-    transition: all .60s ease, z-index .5s ease;
+    transition: .60s ease;
     transform: translateX(0%);
     // z-index: 1039;
     z-index: 1031;
@@ -465,8 +486,8 @@ a:focus, button:focus, .btn:focus {
 }
 .content {
     @include make-row();
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
 }
 .home-top {
     &__content {
@@ -503,8 +524,8 @@ a:focus, button:focus, .btn:focus {
 }
 .section-home {
     @include make-row();
-    padding-top:5rem;
-    padding-bottom:5rem;
+    padding-top:7.6rem;
+    padding-bottom:6rem;
     @include media-breakpoint-down(sm) {
         padding-top:2.5rem;
         padding-bottom:2.5rem;
@@ -602,6 +623,17 @@ a:focus, button:focus, .btn:focus {
 	font-size: 0.86rem;
 	color: $secondary;
 	margin: .5rem auto .75rem auto;
+}
+.scrollTop {
+	font-family: $font-family-lead-base;
+	position: fixed;
+	right: 35px;
+	bottom: -70px;
+	opacity: 0;
+    transition: all 0.4s ease-in-out 0s;
+    @include media-breakpoint-down(sm) { 
+        right: 26px;
+    }
 }
 /*! --- 1.1 Carousels --- */
 .slick-carousel {

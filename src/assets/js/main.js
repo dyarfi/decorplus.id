@@ -120,7 +120,7 @@ $(window).on('scroll',function () {
         if (transparent) {
             transparent = false;
             $('#navbar-top').removeClass('navbar-transparent').addClass('shadow-md');        
-            $('.button-burger').css({'top':'18px'});
+            $('.button-burger').css({'top':'16px'});
         }
     } else {
         if (!transparent) {

@@ -12680,12 +12680,12 @@ a.text-dark:hover, a.text-dark:focus {
 /*! --- 2. Filter Invisible --- */
 /*! --- 2.1 Variables - invisible image filter --- */
 /*! --- 2.1.1 Variable Default --- */
-.ilist-i, .navbar-logo img {
+.ilist-i, .navbar-logo {
   -webkit-filter: none;
   filter: none;
 }
 
-.ilist-i:hover, .navbar-logo img:hover {
+.ilist-i:hover, .navbar-logo:hover {
   -webkit-filter: opacity(0.5);
   filter: opacity(0.5);
 }
@@ -12782,12 +12782,9 @@ a:focus, button:focus, .btn:focus {
   padding-top: .5rem;
   padding-bottom: .65rem;
   color: #272727;
-}
-
-.navbar-logo img {
-  -webkit-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+  -webkit-transition: .45s linear;
+  -o-transition: .45s linear;
+  transition: .45s linear;
 }
 
 .navbar-logo:hover {
@@ -12801,15 +12798,25 @@ a:focus, button:focus, .btn:focus {
   }
 }
 
-.navbar-transparent {
-  background-color: #fff;
+.navbar .navbar-logo img {
+  -webkit-transition: .25s linear;
+  -o-transition: .25s linear;
+  transition: .25s linear;
 }
 
 .navbar-transparent.fixed-top {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  -webkit-box-shadow: 0 0 0 0;
-          box-shadow: 0 0 0 0;
+  padding-top: 1.15rem;
+  padding-bottom: 1.15rem;
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
+}
+
+.navbar-transparent.fixed-top .navbar-logo > img {
+  width: 160px;
+}
+
+.fixed-top.shadow-md .navbar-logo > img {
+  width: 144px;
 }
 
 .navbar-white {
@@ -12824,6 +12831,7 @@ a:focus, button:focus, .btn:focus {
   -webkit-transition: .5s ease;
   -o-transition: .5s ease;
   transition: .5s ease;
+  right: 14px;
 }
 
 .button-burger .btn, .button-close .btn {
@@ -12840,7 +12848,6 @@ a:focus, button:focus, .btn:focus {
 }
 
 .button-burger {
-  right: 14px;
   top: 26px;
 }
 
@@ -12855,8 +12862,7 @@ a:focus, button:focus, .btn:focus {
 }
 
 .button-close {
-  right: 14px;
-  top: 26px;
+  top: 20px;
 }
 
 .button-close .btn.toggled {
@@ -12967,9 +12973,9 @@ a:focus, button:focus, .btn:focus {
   bottom: 0;
   right: 0;
   background-color: #f2f2f2;
-  -webkit-transition: all .60s ease, z-index .5s ease;
-  -o-transition: all .60s ease, z-index .5s ease;
-  transition: all .60s ease, z-index .5s ease;
+  -webkit-transition: .60s ease;
+  -o-transition: .60s ease;
+  transition: .60s ease;
   -webkit-transform: translateX(0%);
       -ms-transform: translateX(0%);
        -o-transform: translateX(0%);
@@ -13051,8 +13057,8 @@ a:focus, button:focus, .btn:focus {
           flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
 }
 
 .home-top__content img {
@@ -13108,8 +13114,8 @@ a:focus, button:focus, .btn:focus {
           flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 7.6rem;
+  padding-bottom: 6rem;
 }
 
 @media (max-width: 767.98px) {
@@ -13236,6 +13242,23 @@ a:focus, button:focus, .btn:focus {
   font-size: 0.86rem;
   color: #6c757d;
   margin: .5rem auto .75rem auto;
+}
+
+.scrollTop {
+  font-family: "Lato", sans-serif;
+  position: fixed;
+  right: 35px;
+  bottom: -70px;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -o-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+@media (max-width: 767.98px) {
+  .scrollTop {
+    right: 26px;
+  }
 }
 
 /*! --- 1.1 Carousels --- */
