@@ -12912,6 +12912,114 @@ a:focus, button:focus, .btn:focus {
   padding-right: 1.125rem;
 }
 
+/*! --- 6.3 Background Overlay Filters --- */
+[data-filter=overlay-dark]:before, [data-filter=overlay-mute]:before, [data-filter=overlay-warning]:before, [data-filter=overlay-secondary]:before, [data-filter=overlay-theme]:before, [data-overlay=overlay-dark]:before, [data-overlay=overlay-mute]:before, [data-overlay=overlay-warning]:before, [data-overlay=overlay-info]:before, [data-overlay=overlay-secondary]:before, [data-overlay=overlay-theme]:before {
+  content: " ";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+[data-filter=overlay-mute], [data-filter=overlay-dark], [data-filter=overlay-warning], [data-filter=overlay-secondary], [data-filter=overlay-theme], [data-overlay=overlay-dark], [data-overlay=overlay-mute], [data-overlay=overlay-warning], [data-overlay=overlay-info], [data-overlay=overlay-secondary], [data-overlay=overlay-theme] {
+  -webkit-background-size: cover;
+          background-size: cover;
+  position: relative;
+}
+
+[data-filter=overlay-mute] > img, [data-filter=overlay-dark] > img, [data-filter=overlay-warning] > img, [data-filter=overlay-secondary] > img, [data-filter=overlay-theme] > img, [data-overlay=overlay-dark] > img, [data-overlay=overlay-mute] > img, [data-overlay=overlay-warning] > img, [data-overlay=overlay-info] > img, [data-overlay=overlay-secondary] > img, [data-overlay=overlay-theme] > img {
+  z-index: -1;
+}
+
+[data-filter=overlay-mute]:before {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+[data-filter=overlay-warning]:before {
+  background-color: rgba(119, 89, 0, 0.5);
+}
+
+[data-filter=overlay-secondary]:before {
+  background-color: rgba(73, 79, 84, 0.5);
+}
+
+[data-filter=overlay-theme]:before {
+  background-color: rgba(0, 78, 92, 0.5);
+}
+
+[data-overlay=overlay-dark]:before {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+[data-overlay=overlay-mute]:before {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+[data-overlay=overlay-warning]:before {
+  background-color: rgba(119, 89, 0, 0.5);
+}
+
+[data-overlay=overlay-info]:before {
+  background-color: rgba(15, 102, 116, 0.5);
+}
+
+[data-overlay=overlay-secondary]:before {
+  background-color: rgba(73, 79, 84, 0.5);
+}
+
+[data-overlay=overlay-theme]:before {
+  background-color: rgba(0, 78, 92, 0.5);
+}
+
+[data-filter=overlay-dark] > * {
+  position: relative;
+}
+
+[data-filter=overlay-mute] > * {
+  position: relative;
+}
+
+[data-filter=overlay-warning] > * {
+  position: relative;
+}
+
+[data-filter=overlay-secondary] > * {
+  position: relative;
+}
+
+[data-filter=overlay-theme] > * {
+  position: relative;
+}
+
+[data-overlay=overlay-dark] > * {
+  position: relative;
+}
+
+[data-overlay=overlay-mute] > * {
+  position: relative;
+}
+
+[data-overlay=overlay-warning] > * {
+  position: relative;
+}
+
+[data-overlay=overlay-info] > * {
+  position: relative;
+}
+
+[data-overlay=overlay-secondary] > * {
+  position: relative;
+}
+
+[data-overlay=overlay-theme] > * {
+  position: relative;
+}
+
 /* --- Button Menu --- */
 .btn-rounded {
   border-radius: 2rem !important;
@@ -13465,6 +13573,7 @@ a:focus, button:focus, .btn:focus {
   -webkit-transition: .5s ease;
   -o-transition: .5s ease;
   transition: .5s ease;
+  color: #007bff;
 }
 
 .gallery-list__link:hover {

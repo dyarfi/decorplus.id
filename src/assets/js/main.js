@@ -62,16 +62,17 @@ $(document).ready(function() {
         }
     });
     // Scroll to element
-    $('.scrollTo').on('click', function () {
+    $('.scrollTo').on('click', function (event) {
         $('.button-close a').click();
         if($(this).attr('href').split('#')[1]) {
             var $el = $(this).attr('href').match(/(#[a-z0-9][a-z0-9\-_]*)/ig)[0];
             if ($($el).offset()) {
                 $('html, body').animate({
-                    scrollTop: ($($el).offset().top - 20)
+                    scrollTop: ($($el).offset().top - 50)
                 },1900,'swing');
             }
         }
+        event.preventDefault();
     });
     // Scroll to Top
     // declare variable

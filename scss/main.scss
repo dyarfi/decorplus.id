@@ -386,6 +386,185 @@ a:focus, button:focus, .btn:focus {
     padding-left:1.125rem;
     padding-right:1.125rem;
 }
+/*! --- 6.3 Background Overlay Filters --- */
+// Placeholder
+%overlay {
+	content: " ";
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	pointer-events: none;
+}
+%overlay-parent {
+	background-size: cover ;
+	position: relative;
+	> img {
+        z-index: -1
+	}
+}
+[data-filter=overlay-mute] {
+	&:before {
+		background-color:rgba($black,.25);
+    }
+    
+	@extend %overlay-parent;
+}
+[data-filter=overlay-warning] {
+	&:before {
+		background-color:rgba($dark-warning,.5);
+	}
+}
+[data-filter=overlay-secondary] {
+	&:before {
+		background-color:rgba($dark-secondary,.5);
+	}
+}
+[data-filter=overlay-theme] {
+	&:before {
+		background-color:rgba($dark-theme,.5);
+	}
+}
+
+
+
+[data-overlay=overlay-dark] {
+	&:before {
+		background-color:rgba($black,.75);
+	}
+}
+[data-overlay=overlay-mute] {
+	&:before {
+		background-color:rgba($black,.45);
+	}
+}
+[data-overlay=overlay-warning] {
+	&:before {
+		background-color:rgba($dark-warning,.5);
+	}
+}
+[data-overlay=overlay-info] {
+	&:before {
+		background-color:rgba($dark-info,.5);
+	}
+}
+[data-overlay=overlay-secondary] {
+	&:before {
+		background-color:rgba($dark-secondary,.5);
+	}
+}
+[data-overlay=overlay-theme] {
+	&:before {
+		background-color:rgba($dark-theme,.5);
+	}
+}
+
+
+[data-filter=overlay-dark] {
+	> * {
+        position: relative;
+	}
+	@extend %overlay-parent;
+	&:before {
+		@extend %overlay;
+	}
+}
+[data-filter=overlay-mute] {
+	> * {
+        position: relative;
+	}
+	@extend %overlay-parent;
+	&:before {
+        @extend %overlay;
+	}
+}
+[data-filter=overlay-warning] {
+	> * {
+		position: relative;
+	}
+	@extend %overlay-parent;
+	&:before {
+		@extend %overlay;
+	}
+}
+[data-filter=overlay-secondary] {
+	> * {
+		position: relative;
+	}
+	@extend %overlay-parent;
+	&:before {
+		@extend %overlay;
+	}
+}
+[data-filter=overlay-theme] {
+	> * {
+		position: relative;
+	}
+	@extend %overlay-parent;
+	&:before {
+		@extend %overlay;
+	}
+}
+// Data overlay
+[data-overlay=overlay-dark] {
+	> * {
+        position: relative;
+	}
+	@extend %overlay-parent;
+	&:before {
+		@extend %overlay;
+	}
+}
+[data-overlay=overlay-mute] {
+	> * {
+        position: relative;
+	}
+	@extend %overlay-parent;
+	&:before {
+		@extend %overlay;
+	}
+}
+[data-overlay=overlay-warning] {
+	> * {
+        position: relative;
+	}
+	@extend %overlay-parent;
+	&:before {
+		@extend %overlay;
+	}
+}
+[data-overlay=overlay-info] {
+	> * {
+        position: relative;
+	}
+	@extend %overlay-parent;
+	&:before {
+		@extend %overlay;
+	}
+}
+[data-overlay=overlay-secondary] {
+	> * {
+        position: relative;
+	}
+	@extend %overlay-parent;
+	&:before {
+		@extend %overlay;
+	}
+}
+[data-overlay=overlay-theme] {
+	> * {
+        position: relative;
+        // z-index: 0;
+	}
+	@extend %overlay-parent;
+	&:before {
+		@extend %overlay;
+	}
+}
 /* --- Button Menu --- */
 .btn-rounded {
 	border-radius:2rem !important;
@@ -797,6 +976,7 @@ a:focus, button:focus, .btn:focus {
     }
     &__link {
         transition: .5s ease;
+        color:$primary;
         &:hover {
             text-decoration: none;
         }
