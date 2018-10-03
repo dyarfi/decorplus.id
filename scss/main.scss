@@ -315,7 +315,7 @@ a:focus, button:focus, .btn:focus {
     transition: .5s ease;
     right: 14px;    
     .btn {
-        color:#dc3545;
+        color: $blue;
         transition: 1.25s ease;
         border-radius: 0;
         font-size: 1.20rem;
@@ -327,7 +327,7 @@ a:focus, button:focus, .btn:focus {
         //     box-shadow: none;
         // }
         &:hover {
-            color:darken(#dc3545, 20%);
+            color:darken($blue, 20%);
         }
     }
 }
@@ -353,7 +353,7 @@ a:focus, button:focus, .btn:focus {
 }
 .menus-nav {
     position: absolute;
-    top:16%;
+    top:14%;
     bottom:0;
     width: 100%;
     height: 100%;
@@ -365,9 +365,27 @@ a:focus, button:focus, .btn:focus {
     &-icon {
         .list-inline-item {
             text-decoration: none;
-            color:$secondary;
+            // color:$secondary;
+            .icon-instagram {
+                color:#A1755C;
+            }
+            .icon-twitter {
+                color:#32CCFE;
+            }
+            .icon-facebook {
+                color:#3C599F;
+            }
             &:hover {
-                color:lighten($secondary,10%);
+                // color:lighten($secondary,10%);
+                .icon-instagram {
+                    color:lighten(#A1755C,10%);
+                }
+                .icon-twitter {
+                    color:lighten(#32CCFE,10%);
+                }
+                .icon-facebook {
+                    color:lighten(#3C599F,10%);
+                }
             }
         }
     }
@@ -606,7 +624,7 @@ a:focus, button:focus, .btn:focus {
     top:0;
     bottom:0;
     right:0;
-    background-color:#f2f2f2; 
+    background-color:#fafafa; 
     transition: .60s ease;
     transform: translateX(0%);
     // z-index: 1039;
@@ -670,6 +688,9 @@ a:focus, button:focus, .btn:focus {
 }
 .home-top {
     &__content {
+        text-decoration: none !important;
+        transform: translateY(20px);
+        color:$dark !important;
         img {
             transition: .5s ease;
             transform: translateY(0);
@@ -683,9 +704,22 @@ a:focus, button:focus, .btn:focus {
                 box-shadow: 0px 10px 20px rgba(0,0,0,.1);
             }
             .home-top__title {
+                background-color:rgba($white,.90);
                 transform: translateY(-7.5px);
             }   
+            .home-top__body { 
+                transform: translateY(10px);
+                visibility: visible;
+                opacity: 1;
+            }
         }
+    }
+    &__body {
+        transform: translateY(-10px);
+        transition: .5s ease;
+        visibility: hidden;
+        opacity: 0;
+        // font-weight: 600;        
     }
     &__title {
         background-color:rgba($white,.75);
@@ -698,7 +732,6 @@ a:focus, button:focus, .btn:focus {
         z-index: 1;
         transition: .5s ease;
         text-transform: uppercase
-
     }
 }
 .section-home {
