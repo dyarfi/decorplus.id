@@ -121,13 +121,13 @@ $(window).on('scroll',function () {
         if (transparent) {
             transparent = false;
             $('#navbar-top').removeClass('navbar-transparent').addClass('shadow-md');        
-            $('.button-burger').css({'top':'16px'});
+            $('.button-burger').css({'top':'24px'});
         }
     } else {
         if (!transparent) {
             transparent = true;
             $('#navbar-top').addClass('navbar-transparent').removeClass('shadow-md');
-            $('.button-burger').css({'top':'26px'});
+            $('.button-burger').css({'top':'30px'});
         }
     }
 });

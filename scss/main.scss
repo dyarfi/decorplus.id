@@ -332,7 +332,7 @@ a:focus, button:focus, .btn:focus {
     }
 }
 .button-burger {
-    top: 26px;
+    top: 30px;
     .btn {
         &.toggled {
             transform: rotate(-180deg);
@@ -342,7 +342,7 @@ a:focus, button:focus, .btn:focus {
     }
 }
 .button-close {
-    top: 20px;
+    top: 15px;
     .btn {
         &.toggled {
             transform: rotate(-180deg);

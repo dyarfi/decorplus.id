@@ -12848,7 +12848,7 @@ a:focus, button:focus, .btn:focus {
 }
 
 .button-burger {
-  top: 26px;
+  top: 30px;
 }
 
 .button-burger .btn.toggled {
@@ -12862,7 +12862,7 @@ a:focus, button:focus, .btn:focus {
 }
 
 .button-close {
-  top: 20px;
+  top: 15px;
 }
 
 .button-close .btn.toggled {
