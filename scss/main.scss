@@ -306,7 +306,7 @@ a:focus, button:focus, .btn:focus {
     }
 }
 .navbar-white  {
-    transition: .5s ease;
+    transition: box-shadow .5s ease, padding-top .5s ease, padding-bottom .5s ease;
     // transition-delay: .25s;
     background-color: #ffffff;
 }
@@ -393,6 +393,16 @@ a:focus, button:focus, .btn:focus {
         .active {
             font-weight: bold;
             text-decoration: none;
+        }
+    }
+    &-phone {
+        .list-inline-item {
+            color: $dark;
+            padding: 0;
+            &:hover {
+                color: lighten($dark,20%);
+            }
+            // &:not(:last-child) { margin-right:0; }
         }
     }
 }
@@ -624,23 +634,26 @@ a:focus, button:focus, .btn:focus {
     top:0;
     bottom:0;
     right:0;
-    background-color:#fafafa; 
+    // background-color:#fafafa; 
+    background-color:rgba(255,255,255,1); 
     transition: .60s ease;
     transform: translateX(0%);
     // z-index: 1039;
     z-index: 1031;
     @include media-breakpoint-down(sm) {
-        min-width: 66%;
+        min-width: 75%;
     }
     &:before {
         content:" ";
         position: absolute;
-        left:-150vh;
+        // left:-150vh;
+        left: calc(-100% / 2 * 5);
         right:0;
         top:0;
-        bottom:0;        
-        width: 150vh;
+        bottom:0;
+        width: calc(100% / 2 * 5);
         height:100%;
+        display:block;
         overflow: hidden;
         background: rgba(0,0,0,.5);
         opacity: 1;
@@ -691,8 +704,9 @@ a:focus, button:focus, .btn:focus {
         text-decoration: none !important;
         transform: translateY(20px);
         color:$dark !important;
+        position: relative;
         img {
-            transition: .5s ease;
+            transition: all .5s ease;
             transform: translateY(0);
             margin-top: .45rem;
             margin-bottom: .45rem;
@@ -704,40 +718,78 @@ a:focus, button:focus, .btn:focus {
                 box-shadow: 0px 10px 20px rgba(0,0,0,.1);
             }
             .home-top__title {
-                background-color:rgba($white,.90);
+                // background-color:rgba($white,.90);
                 transform: translateY(-7.5px);
             }   
             .home-top__body { 
-                transform: translateY(10px);
+                transform: translateY(30px);
+                // transform: translateY(-7.5px);
                 visibility: visible;
                 opacity: 1;
+                > div {
+                    background-color:rgba($white,.75);
+                    box-shadow: 0px 3px 20px rgba(0,0,0,.1);
+                }
+                // border-top:1px solid $white;
+                // margin-bottom: 1.25rem;
             }
         }
     }
     &__body {
-        transform: translateY(-10px);
-        transition: .5s ease;
+        // transform: translateY(-20px);
+        transition: top .5s ease, transform .5s ease, opacity .45s ease, visibility .75s ease;
         visibility: hidden;
         opacity: 0;
-        // font-weight: 600;        
+        // Length and wide
+        // width: 100%;
+        // height: 100%;
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 1.5rem; 
+        }
+        // Spacings and position
+        position: absolute;
+        left:0px;
+        top:45.20%;
+        // right:0;
+        // bottom:0;
+        padding:0rem;
+        transform: translateY(0px);
+        z-index: 1;
+        // margin:0 auto 1.5rem auto;
+        // font-weight: 600;
+        > div {
+            display: block;
+            margin-top:.13rem;
+            margin-bottom:.13rem;
+            margin-left:auto;
+            margin-right:auto;
+            padding:.25rem 1rem;
+            background-color: rgba(255,255,255,1);
+        }
     }
     &__title {
+        // Colors
         background-color:rgba($white,.75);
-        padding:1rem;
         color:lighten($black,30%);
-        position: absolute;
         font-family: $font-family-lead-base;
+        text-transform: uppercase;
+        padding:1rem;
+        // Spacings and position
+        position: absolute;
         left:15px;
-        bottom:20%;
+        bottom:21.5%;
         z-index: 1;
-        transition: .5s ease;
-        text-transform: uppercase
+        // Transition
+        transition: all .5s ease;
+        @include media-breakpoint-down(sm) {            
+            bottom:40%;
+        }
     }
 }
 .section-home {
     @include make-row();
     padding-top:7.6rem;
-    padding-bottom:6rem;
+    padding-bottom:6.6rem;
     @include media-breakpoint-down(sm) {
         padding-top:2.5rem;
         padding-bottom:2.5rem;
@@ -988,7 +1040,7 @@ a:focus, button:focus, .btn:focus {
         left:0;
         right: 0;
         // Transition and Animations
-        transition: .5s ease;
+        transition: all .5s ease;
         transform: translateY(20px);
         // Spacing
         padding-top: 2rem;
@@ -1002,7 +1054,8 @@ a:focus, button:focus, .btn:focus {
         // Colors
         color:$white;
         // background-color: rgba(#00d9ff,0.25);
-        background-color: rgba(255,255,255,0.75);
+        background-color: rgba(255,255,255,0.85);
+        // background-color: rgba(0,0,0,0.75);
         @include media-breakpoint-down(sm) { 
             min-height: 380px;
         }

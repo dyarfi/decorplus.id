@@ -53,6 +53,7 @@ $(document).ready(function() {
             return $(element).attr('data-title');
         }
     });
+    /*
     baguetteBox.run('.home-top', {
         animation: 'fadeIn',
         noScrollbars: true,
@@ -61,6 +62,7 @@ $(document).ready(function() {
             return $(element).attr('data-title');
         }
     });
+    */
     // Scroll to element
     $('.scrollTo').on('click', function (event) {
         $('.button-close a').click();
