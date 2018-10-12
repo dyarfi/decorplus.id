@@ -353,7 +353,7 @@ a:focus, button:focus, .btn:focus {
 }
 .menus-nav {
     position: absolute;
-    top:14%;
+    top:10%;
     bottom:0;
     width: 100%;
     height: 100%;
@@ -640,7 +640,7 @@ a:focus, button:focus, .btn:focus {
     transform: translateX(0%);
     // z-index: 1039;
     z-index: 1031;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
         min-width: 75%;
     }
     &:before {
@@ -722,7 +722,7 @@ a:focus, button:focus, .btn:focus {
                 transform: translateY(-7.5px);
             }   
             .home-top__body { 
-                transform: translateY(30px);
+                transform: translateY(31.2px);
                 // transform: translateY(-7.5px);
                 visibility: visible;
                 opacity: 1;
@@ -799,6 +799,8 @@ a:focus, button:focus, .btn:focus {
     @include make-container();
     padding-top:0;
     padding-bottom:0;
+    padding-left:0;
+    padding-right:0;
     margin-right:auto;
     margin-left:auto;
     margin-bottom: 0;

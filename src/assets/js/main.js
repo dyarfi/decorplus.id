@@ -1,3 +1,5 @@
+var host_url = document.location.hostname;
+// console.log(host_url);
 $(document).ready(function() {
     /* ==============================================
     Preloader
@@ -97,6 +99,131 @@ $(document).ready(function() {
         }, 1900);
         return false;
     }); // click() scroll top EMD
+
+    $('#form-contact').submit(function () {
+        return false;
+    })
+
+    // Form Validations
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var $form_contact = $('#form-contact');
+        var $form_booking = $('#form-booking');
+        var $inputs = document.getElementsByClassName('needs-validation');
+        // VALIDATES Contact Form
+        // Loop over them and prevent submission
+        var validates_contact = Array.prototype.filter.call($inputs, function(form_contact) {
+            form_contact.addEventListener('submit', function(event) {
+                if (form_contact.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form_contact.classList.add('was-validated');
+                // Prepared for post to server
+                if (form_contact.checkValidity() && $form_contact.hasClass('was-validated')) {
+                    $form_contact.find('button[name=submit]').prop("disabled",true);
+                        axios({
+                            headers: {
+                                'Access-Control-Allow-Origin': '*',
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'content-type': 'application/x-www-form-urlencoded'//,
+                                //'X-CSRF-TOKEN' : document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                            },
+                            crossdomain: true,
+                            method: 'post',
+                            url: 'contact',
+                            data: $form_contact.serialize()
+                        })
+                        .then(function(response) {
+                            console.log(response.status);
+                            if (response.status == 200 || response.status == 405 && response.statusText == 'OK') {
+                                var result = response.data;
+                                if (result.code == 0) {
+                                    $('#'+result.handler).find('.invalid-feedback').show().empty().html(result.message);
+                                } else {
+                                    $form_contact.addClass('d-none');
+                                    $('.content').html('<div class="mx-auto text-danger"><h5 class="display-4">Thank you for contacting</h5></div>');
+                                    setTimeout( function() { $("#BootModal").modal('hide'); window.location.reload(false); }, 900 );
+                                }
+                            }
+                        })
+                        .catch(function (error) {
+                            $($form_contact).find('.invalid-feedback').show();
+                        });
+                    $form_contact.find('button[name=submit]').prop("disabled",false);
+                }
+                event.preventDefault();
+            }, false);
+        });
+        // VALIDATES Booking Form
+        // Loop over them and prevent submission
+        var validates_booking = Array.prototype.filter.call($inputs, function(form_booking) {
+            form_booking.addEventListener('submit', function(event) {
+              if (form_booking.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+              }
+              form_booking.classList.add('was-validated');
+              // Prepared for post to server
+              if (form_booking.checkValidity() && $form_booking.hasClass('was-validated')) {
+                  $form_booking.find('button[name=submit]').prop("disabled",true);
+                      axios({
+                          headers: {
+                              'Access-Control-Allow-Origin': '*',
+                              'X-Requested-With': 'XMLHttpRequest',
+                              'content-type': 'application/x-www-form-urlencoded'//,
+                              //'X-CSRF-TOKEN' : document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                          },
+                          crossdomain: true,
+                          method: 'post',
+                          url: 'contact',
+                          data: $form_booking.serialize()
+                      })
+                      .then(function(response) {
+                          console.log(response.status);
+                          if (response.status == 200 || response.status == 405 && response.statusText == 'OK') {
+                              var result = response.data;
+                              if (result.code == 0) {
+                                  $('#'+result.handler).find('.invalid-feedback').show().empty().html(result.message);
+                              } else {
+                                  $form_booking.addClass('d-none');
+                                  $('.content').html('<div class="mx-auto text-danger"><h5 class="display-4">Thank you for contacting</h5></div>');
+                                  setTimeout( function() { $("#BootModal").modal('hide'); window.location.reload(false); }, 900 );
+                              }
+                          }
+                      })
+                      .catch(function (error) {
+                          $($form_booking).find('.invalid-feedback').show();
+                      });
+                  $form_booking.find('button[name=submit]').prop("disabled",false);
+              }
+              event.preventDefault();
+            }, false);
+        });
+
+    }, false);
+
+    // Initial scrollreveal
+    window.sr = ScrollReveal();
+
+    // sr.reveal('.copy-text-head', { reset:true, viewFactor: 0.6, origin: 'top', scale:'1', duration: '1000', delay:'200', distance: '12px', }, '100');
+    // sr.reveal('.copy-text-sub', { reset:true, viewFactor: 0.6, origin: 'bottom', scale:'1', duration: '1000', delay:'200', distance: '12px', }, '100');
+    $('.blog-post__row, .aboutus-content, .service-content, .welcome-home').each(function(i,hl){
+        i = i + 1;
+        sr.reveal(hl, { reset:false, viewFactor: 0.3, origin: 'bottom', scale:'1', duration: '1000', delay:'300', distance: '16px', }, '50');
+        // i++;
+    });
+    $('.gallery-list__content').each(function(j,gl){
+        j = j + 1;
+        sr.reveal(gl, { reset:false, viewFactor: 0.3, origin: 'bottom', scale:'1', duration: '1000', delay:'300', distance: '16px', }, '50');
+        // j++;
+    });
+    $('.home-top__content').each(function(k,tl){
+        k = k + 1;
+        sr.reveal(tl, { reset:false, viewFactor: 0.3, origin: 'right', scale:'1', duration: '1000', delay:'300', distance: '16px', }, k + '00');
+        // k++;
+    });
+
 });
 
 var transparent = true;

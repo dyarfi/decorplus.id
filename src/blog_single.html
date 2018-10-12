@@ -156,13 +156,13 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" class="form-contact needs-validation" novalidate>
+                    <form method="POST" class="form-booking needs-validation" novalidate>
                         <div class="col-lg-12">
                             <div class="mx-auto text-left">
                                 <div class="form-group">
                                     <label for="inlineFormInputGroupNameBook">Name</label>
                                     <div class="input-group mb-2 mr-sm-2">                                    
-                                        <input type="text" class="form-control" id="inlineFormInputGroupNameBook" placeholder="Your Name">
+                                        <input name="book-name" type="text" class="form-control" id="inlineFormInputGroupNameBook" placeholder="Your Name" required>
                                         <div class="invalid-feedback">
                                             Insert valid name.
                                         </div>
@@ -171,7 +171,7 @@
                                 <div class="form-group">
                                     <label for="inlineFormInputGroupEmailBook">Email</label>
                                     <div class="input-group mb-2 mr-sm-2">                                    
-                                        <input type="email" class="form-control" id="inlineFormInputGroupEmailBook" placeholder="Your Email">
+                                        <input name="book-email" type="email" class="form-control" id="inlineFormInputGroupEmailBook" placeholder="Your Email" required>
                                         <div class="invalid-feedback">
                                             Insert valid email.
                                         </div>
@@ -180,7 +180,7 @@
                                 <div class="form-group">
                                     <label for="inlineFormInputGroupPhoneBook">Phone</label>
                                     <div class="input-group mb-2 mr-sm-2">
-                                        <input type="text" class="form-control" id="inlineFormInputGroupPhoneBook" placeholder="Your Phone">
+                                        <input name="book-phone" type="text" class="form-control" id="inlineFormInputGroupPhoneBook" placeholder="Your Phone" required>
                                         <div class="invalid-feedback">
                                             Insert valid phone.
                                         </div>
@@ -190,42 +190,51 @@
                                     <label>Type</label>
                                     <div class="div">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" checked type="radio" name="inlineRadioOptionType" id="eventTypePersonal" value="option1">
+                                            <input class="form-check-input" checked type="radio" name="book-type" id="eventTypePersonal" value="option1">
                                             <label class="form-check-label" for="eventTypePersonal">Personal</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptionType" id="eventTypeCompany" value="option2">
+                                            <input class="form-check-input" type="radio" name="book-type" id="eventTypeCompany" value="option2">
                                             <label class="form-check-label" for="eventTypeCompany">Company</label>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Insert valid type options.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inlineFormInputGroupPerson">Person</label>
                                     <div class="input-group mb-2 mr-sm-2">
-                                        <select class="custom-select" id="inlineFormInputGroupPerson" name="person">
+                                        <select class="custom-select" id="inlineFormInputGroupPerson" name="book-person" required>
                                             <option value="10-50">10 - 50</option>
                                             <option value="100-down">&lt; 100</option>
                                             <option value="500-down">&lt; 1000</option>
                                             <option value="1000">&gt; 1000</option>
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Insert valid person select.
+                                        </div>
                                     </div>
                                 </div>                
                                 <div class="form-group">
                                     <label for="inlineFormInputGroupEvent">Event</label>
                                     <div class="input-group mb-2 mr-sm-2">
-                                        <select class="custom-select" id="inlineFormInputGroupEvent">
-                                            <option selected>Wedding</option>
-                                            <option value="1">Birthday</option>
-                                            <option value="2">Gathering</option>
-                                            <option value="3">Celebration</option>
-                                            <option value="4">Private</option>
+                                        <select class="custom-select" id="inlineFormInputGroupEvent" name="book-event">
+                                            <option value="1" selected>Wedding</option>
+                                            <option value="2">Birthday</option>
+                                            <option value="3">Gathering</option>
+                                            <option value="4">Celebration</option>
+                                            <option value="5">Private</option>
                                         </select>
+                                        <div class="invalid-feedback">
+                                            Insert valid event select.
+                                        </div>
                                     </div>
                                 </div>                            
                                 <div class="form-group">
                                     <label for="inlineFormInputGroupDate">Date</label>
                                     <div class="input-group mb-2 mr-sm-2">
-                                        <input type="text" class="form-control" id="inlineFormInputGroupDate" placeholder="Date">
+                                        <input type="text" class="form-control" id="inlineFormInputGroupDate" name="book-date" placeholder="Date" required>
                                         <div class="invalid-feedback">
                                             Insert valid date.
                                         </div>
@@ -234,42 +243,51 @@
                                 <div class="form-group">
                                     <label for="inlineFormInputGroupPlace">Place <span class="text-muted small">(Set empty if you haven't decide)</span></label>
                                     <div class="input-group mb-2 mr-sm-2">
-                                        <input type="text" class="form-control" id="inlineFormInputGroupPlace" placeholder="Place">
+                                        <input type="text" class="form-control" id="inlineFormInputGroupPlace" name="book-place" placeholder="Place">
+                                        <div class="invalid-feedback">
+                                            Insert valid place select.
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Held</label>
-                                    <div class="div">
+                                    <div class="input-group">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" checked type="radio" name="inlineRadioOptions" id="eventHeldOutdoor" value="option1">
-                                            <label class="form-check-label" for="eventHeldOutdoor">Outdoor</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="eventHeldIndoor" value="option2">
+                                            <input class="form-check-input" type="radio" name="book-held" id="eventHeldIndoor" value="option2">
                                             <label class="form-check-label" for="eventHeldIndoor">Indoor</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="eventHeldOutdoorIndoor" value="option3">
-                                            <label class="form-check-label" for="eventHeldOutdoorIndoor">Outdoor and Indoor</label>
+                                            <input class="form-check-input" checked type="radio" name="book-held" id="eventHeldOutdoor" value="option1">
+                                            <label class="form-check-label" for="eventHeldOutdoor">Outdoor</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="book-held" id="eventHeldIndoorOutdoor" value="option3">
+                                            <label class="form-check-label" for="eventHeldIndoorOutdoor">Indoor and Outdoor</label>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Insert valid held options.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inlineFormInputGroupMessageBook">Message</label>
                                     <div class="input-group mb-2 mr-sm-2">
-                                        <textarea name="message-user" rows="4" class="form-control" id="inlineFormInputGroupMessageBook" placeholder="Your Message"></textarea>
+                                        <textarea name="message-user" rows="4" class="form-control" name="book-message" id="inlineFormInputGroupMessageBook" placeholder="Your Message" required></textarea>
+                                        <div class="invalid-feedback">
+                                            Insert valid message.
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-outline-secondary btn-lg btn-block btn-rounded"><i class="oi oi-location"></i> Submit</button>
+                                    <button class="btn btn-outline-secondary btn-lg btn-block btn-rounded" type="submit"><i class="oi oi-location"></i> Book</button>
                                 </div>
+                                <div id="form_booking_message"></div>
                             </div>
                         </div>
                     </form> 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Book</button>
                 </div>
             </div>
         </div>
