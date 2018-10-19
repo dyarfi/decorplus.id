@@ -13198,6 +13198,7 @@ a:focus, button:focus, .btn:focus {
   margin-left: -15px;
   padding-top: 3.25rem;
   padding-bottom: 3.25rem;
+  overflow: hidden;
 }
 
 .home-top__content {
@@ -13903,6 +13904,47 @@ a:focus, button:focus, .btn:focus {
   -webkit-box-shadow: 0 -1px 0 #fff, 0 2px 0 #fff;
           box-shadow: 0 -1px 0 #fff, 0 2px 0 #fff;
   border-width: 0;
+}
+
+.spin {
+  -webkit-animation: spin .5s infinite;
+       -o-animation: spin .5s infinite;
+          animation: spin .5s infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+       transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(360deg);
+       transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+         -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 /* Extra small devices (portrait phones, less than 576px)

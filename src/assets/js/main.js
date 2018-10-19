@@ -108,6 +108,7 @@ $(document).ready(function() {
     window.addEventListener('load', function() {
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var $form_contact = $('#form-contact');
+        var $submit_contact = $form_contact.find('[type=submit]');
         var $form_booking = $('#form-booking');
         var $inputs = document.getElementsByClassName('needs-validation');
         // VALIDATES Contact Form
@@ -122,6 +123,7 @@ $(document).ready(function() {
                 // Prepared for post to server
                 if (form_contact.checkValidity() && $form_contact.hasClass('was-validated')) {
                     $form_contact.find('button[name=submit]').prop("disabled",true);
+                    $submit_contact.html('<i class="oi oi-x small spin"></i>');
                         axios({
                             headers: {
                                 'Access-Control-Allow-Origin': '*',
@@ -136,6 +138,7 @@ $(document).ready(function() {
                         })
                         .then(function(response) {
                             console.log(response.status);
+                            $submit_contact.html('Submit');
                             if (response.status == 200 || response.status == 405 && response.statusText == 'OK') {
                                 var result = response.data;
                                 if (result.code == 0) {
@@ -149,6 +152,7 @@ $(document).ready(function() {
                         })
                         .catch(function (error) {
                             $($form_contact).find('.invalid-feedback').show();
+                            $submit_contact.html('Submit');
                         });
                     $form_contact.find('button[name=submit]').prop("disabled",false);
                 }
@@ -222,6 +226,12 @@ $(document).ready(function() {
         k = k + 1;
         sr.reveal(tl, { reset:false, viewFactor: 0.3, origin: 'right', scale:'1', duration: '1000', delay:'300', distance: '16px', }, k + '00');
         // k++;
+    });
+    $('.headline').each(function(l,hl){
+        sr.reveal(hl, { reset:false, viewFactor: 0.3, origin: 'top', scale:'1', duration: '1000', delay:'300', distance: '16px', }, l + '00');
+    });
+    $('.form-contact').each(function(m,cf){
+        sr.reveal(cf, { reset:false, viewFactor: 0.3, origin: 'top', scale:'1', duration: '1000', delay:'300', distance: '26px', }, m + '00');
     });
 
 });

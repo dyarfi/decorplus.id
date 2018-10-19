@@ -698,6 +698,7 @@ a:focus, button:focus, .btn:focus {
     @include make-row();
     padding-top: 3.25rem;
     padding-bottom: 3.25rem;
+    overflow: hidden;
 }
 .home-top {
     &__content {
@@ -1294,7 +1295,19 @@ a:focus, button:focus, .btn:focus {
 		clear: both;
 	}
 }
-
+.spin {
+    animation: spin .5s infinite;
+}
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
 /* Extra small devices (portrait phones, less than 576px)
  * No media query since this is the default in Bootstrap
  *
